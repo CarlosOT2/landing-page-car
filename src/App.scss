@@ -1,0 +1,12 @@
+//# Uses //
+@use './Shared/styles/mixins/CustomProps' as CustomProps;
+@use './shared/styles/themes' as themes;
+
+:root {
+    @include CustomProps.CustomProps(themes.$default-theme);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}

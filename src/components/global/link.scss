@@ -1,0 +1,8 @@
+//# Use //
+@use '../../Shared/styles/default/text.scss' as text;
+
+.link {
+    color: text.$color;
+    text-decoration: none;
+    
+}
