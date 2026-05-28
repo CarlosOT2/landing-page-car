@@ -2,18 +2,26 @@
 @use '../../Shared/styles/default/header' as header;
 
 .header {
-    display: flex;
-    align-items: center;
+    position: fixed;
 
-    background-color: var(--header-background);
+    display: flex;
+    flex-direction: column;
 
     width: 100%;
     height: header.$height-size;
+    background: linear-gradient(to bottom, var(--color3), transparent);
 
     &__logo {
-        width: 50px;
-        height: header.$height-size - 25px;
+        width: 75px;
+        height: 75px;
         margin-left: 20px;
+    }
+
+    &__hr {
+        border: 0;
+        height: 1px;
+        background: linear-gradient(to right, transparent, var(--color1), transparent);
+        width: 100%;
     }
 
     &__nav {

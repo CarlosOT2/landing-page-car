@@ -8,8 +8,9 @@ export default function Header() {
     return (
         <>
             <header className='header'>
-                <Img src='/logo.png' className='header__logo'/>
+
                 <nav className='header__nav'>
+                    <Img src='/logo.png' className='header__logo' />
                     <Link className={'header__link'}>
                         SEARCH CARS
                     </Link>
@@ -23,6 +24,7 @@ export default function Header() {
                         ABOUT US
                     </Link>
                 </nav>
+                <hr className='header__hr' />
             </header>
         </>
     )
