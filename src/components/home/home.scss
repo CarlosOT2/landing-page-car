@@ -1,13 +1,168 @@
-.home {
-    width: 100%;
-    height: 100%;
+//# Uses //
+@use '../../Shared/styles/default/layout' as layout;
+@use '../../Shared/styles/default/text' as text;
+@use '../../Shared/styles/default/border' as border;
+@use '../../Shared/styles/default/transition' as transition;
 
-    &__bg {
-        position: absolute;
+.home {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    width: 100vw;
+    height: 100vh;
+
+    &__content {
+        position: relative;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
         width: 100%;
-        height: 100vh;
-        object-fit: cover;
-        filter: brightness(0.7);
-        z-index: -1;
+        height: 100%;
+        max-width: layout.$layout-max-width;
     }
+
+    &__hero {
+        &__left-shadow {
+            position: absolute;
+            left: 0;
+            width: 75%;
+            height: layout.$layout-default-height;
+            max-width: layout.$layout-max-width;
+            background: linear-gradient(to right, var(--color3), transparent);
+            z-index: -1;
+        }
+
+        &__bg {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: layout.$layout-default-height;
+            max-width: layout.$layout-max-width;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        &__title {
+            margin: 0;
+
+            color: var(--color1);
+            font-weight: bold;
+            font-size: text.$font-size1;
+
+            width: 30%;
+        }
+
+        &__button {
+            border: none;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            height: 7.5%;
+            width: 20%;
+
+            border-radius: border.$border-radius;
+            background-color: var(--color2);
+
+            color: var(--color1);
+            font-weight: bold;
+            font-size: text.$font-size5-5;
+
+            margin-top: 50px;
+
+            transition: filter transition.$transition-time ease;
+
+            &:hover {
+                filter: brightness(50%);
+            }
+        }
+
+        &__container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            width: layout.$layout-default-width;
+            height: layout.$layout-default-height;
+        }
+    }
+
+    &__vehicles {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        width: layout.$layout-default-width;
+        height: layout.$layout-default-height;
+
+
+        &__title {
+            margin-top: 60px;
+            margin-bottom: 40px;
+
+            font-weight: bold;
+            font-size: text.$font-size2;
+        }
+
+        &__cards {
+            &-text {
+                font-size: text.$font-size4;
+                margin-top: 35px;
+            }
+
+            &-icon {
+                width: 20%;
+                height: 100%;
+            }
+
+            &-button {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                width: 50%;
+                padding: 5%;
+                margin-top: 25px;
+
+                font-size: text.$font-size5-5;
+                font-weight: bold;
+
+                border: 2px solid var(--color3);
+                border-radius: border.$border-radius;
+                background: none;
+
+                transition: transform transition.$transition-time ease;
+
+                &:hover {
+                    transform: scale(1.05);
+                }
+            }
+
+            &-list {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                width: 100%;
+
+                &-item {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+
+                    width: 25%;
+                    height: fit-content;
+                }
+            }
+        }
+    }
+
 }

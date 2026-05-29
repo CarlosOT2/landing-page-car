@@ -1,5 +1,22 @@
 header: 
-  search: "Search Cars"
-  collections: "Collections"
-  partnerships: "Partnerships"
-  aboutus: "About Us"
+  search: "FIND VEHICLES"
+  accessories: "ACCESSORIES"
+  services: "SERVICES"
+  aboutus: "MEET OUR COMPANY"
+home: 
+  hero:
+    discover:
+      title: "Meet Our New Line of Vehicles"
+      button: "View Vehicles"
+  vehicles:
+    title: "Find your Vehicle"
+    cards: 
+      newvehicles: 
+        title: "Find New Vehicles"
+        button: "Find"
+      preowned: 
+        title: "Find Pre-owned Vehicles"
+        button: "Find"
+      financing: 
+        title: "Simulate your financing"
+        button: "Simulate"

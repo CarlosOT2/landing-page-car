@@ -1,5 +1,23 @@
 header: 
-  search: "Procure Carros"
-  collections: "Coleções"
-  partnerships: "Parcerias"
-  aboutus: "Sobre nós"
+  search: "ENCONTRE VEÍCULOS"
+  accessories: "ACESSÓRIOS"
+  services: "SERVIÇOS"
+  aboutus: "CONHEÇA NOSSA EMPRESA"
+home: 
+  hero:
+    discover:
+      title: "Descubra Nossa Nova Linha de Veículos"
+      button: "Saiba Mais"
+  vehicles:
+    title: "Encontre o seu Veículo"
+    cards: 
+      newvehicles: 
+        title: "Encontre Veículos Novos"
+        button: "Encontre"
+      preowned: 
+        title: "Encontre Veículos Seminovos"
+        button: "Encontre"
+      financing: 
+        title: "Simule seu financiamento"
+        button: "Simule"
+

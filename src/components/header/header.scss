@@ -1,20 +1,22 @@
 //# Use //
 @use '../../Shared/styles/default/header' as header;
+@use '../../Shared/styles/default/layout' as layout;
+@use '../../Shared/styles/default/query' as query;
 
 .header {
-    position: fixed;
+    position: absolute;
 
     display: flex;
+    align-items: center;
     flex-direction: column;
 
     width: 100%;
     height: header.$height-size;
-    background: linear-gradient(to bottom, var(--color3), transparent);
+
 
     &__logo {
         width: 75px;
         height: 75px;
-        margin-left: 20px;
     }
 
     &__hr {
@@ -29,14 +31,43 @@
         justify-content: flex-start;
         align-items: center;
 
-        height: 100%;
-
-        gap: 50px;
-
-        margin-left: min(10%, 100px);
+        width: layout.$layout-default-width;
+        max-width: layout.$layout-max-width;
     }
 
     &__link {
         color: var(--color1);
+        
+        &--logo {}
+
+        &-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            width: 100%;
+            height: 100%;
+
+            gap: 50px;
+
+            &__item {}
+        }
+    }
+
+    // MEDIA QUERY
+    @media (min-width: query.$screen-2k) {
+        &__hr {
+            height: 2px;
+        }
+    }
+
+    @media (min-width: query.$screen-4k) {
+        &__hr {
+            height: 3px;
+        }
     }
 }

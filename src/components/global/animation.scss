@@ -1,0 +1,43 @@
+//# Uses //
+@use '../../Shared/styles/default/transition' as transition;
+
+.animation {
+  &-container {
+    width: fit-content;
+    height: fit-content;
+  }
+
+}
+
+.hidden {
+  &-right {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+
+  &-left {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+
+  &-up {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+}
+
+.appear {
+  opacity: 1;
+  transform: translate(0, 0);
+  transition:
+    opacity transition.$animation-transition-time ease,
+    transform transition.$animation-transition-time ease;
+
+  &--fast {
+    opacity: 1;
+    transform: translate(0, 0);
+    transition:
+      opacity calc(transition.$animation-transition-time / 2) ease,
+      transform calc(transition.$animation-transition-time / 2) ease;
+  }
+}
