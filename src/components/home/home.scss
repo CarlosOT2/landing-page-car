@@ -416,9 +416,14 @@
             &__list {
                 &-title {
                     font-size: text.$font-size4;
+                    width: 200px;
                 }
                 &-desc {
-                    width: 200;
+                    width: 200px;
+                }
+
+                &-button {
+                    width: 100%;
                 }
             }
         }
