@@ -4,7 +4,7 @@ import Readln from '../../shared/utils/ReadLn'
 import { initReactI18next } from 'react-i18next';
 import i18next from 'i18next'
 
-const i18n = i18next
+await i18next
     .use(initReactI18next)
     .init({
         resources: {
@@ -15,4 +15,4 @@ const i18n = i18next
         interpolation: { escapeValue: false }
     });
 
-export default i18n
+export default i18next

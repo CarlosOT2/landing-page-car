@@ -27,7 +27,6 @@ function Lang() {
 function GetDefaultLn() {
   const DefaultLn = navigator.language.toLowerCase()
 
-  console.log(DefaultLn)
   if (DefaultLn.startsWith("pt")) {
     return "pt"
   } else if (DefaultLn.startsWith("en")) {
