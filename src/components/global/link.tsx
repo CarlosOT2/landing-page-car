@@ -14,9 +14,13 @@ interface link {
     className?: string
     /** children of the link */
     children?: React.ReactNode
+    /**
+     * Prevents the text from wrapping onto multiple lines (no-wrap behavior)
+     */
+    no_wrap?: boolean
 }
 
-export default function link({ to = "/", className = '', children }: link) {
+export default function link({ to = "/", className = '', children, no_wrap }: link) {
     const frmtd_className: string = FilterClasses(`
                     link
                     ${className}
@@ -26,7 +30,7 @@ export default function link({ to = "/", className = '', children }: link) {
             <Link to={to} className={frmtd_className}>
                 {
                     typeof children === 'string' ?
-                        <Text tag='span' className={FilterClasses(frmtd_className)}>
+                        <Text tag='span' className={FilterClasses(frmtd_className)} no_wrap={no_wrap}>
                             {children}
                         </Text>
                         :

@@ -1,7 +1,8 @@
+//# Use //
+@use '../../Shared/styles/mixins/no-select' as no-select;
+
 .img {
     &--no-select {
-        -webkit-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
+        @include no-select.no-select;
     }
 }

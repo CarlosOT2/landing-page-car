@@ -1,3 +1,5 @@
+general:
+  companyname: "Company Name"
 header: 
   search: "FIND VEHICLES"
   accessories: "ACCESSORIES"
@@ -8,7 +10,7 @@ home:
     discover:
       title: "Meet Our New Line of Vehicles"
       button: "View Vehicles"
-  vehicles:
+  find-vehicles:
     title: "Find your Vehicle"
     cards: 
       newvehicles: 
@@ -17,6 +19,30 @@ home:
       preowned: 
         title: "Find Pre-owned Vehicles"
         button: "Find"
-      financing: 
-        title: "Simulate your financing"
-        button: "Simulate"
+      visitus: 
+        title: "Visit Us"
+        button: "Locations"
+  vehicles:
+    cards:
+      button: "View Vehicle"
+footer:
+  nav:
+    cols:
+      vehicles:
+        title: "Vehicles"
+        links:
+          new: "New Cars"
+          semi-new: "Semi-New"
+      services:
+        title: "Services & Accessories"
+        links:
+          maintenance: "Maintenance & Revision"
+          bodywork: "Bodywork & Painting"
+          oil-change: "Oil Change"
+          accessories: "Original Accessories"
+      about:
+        title: "About Us"
+        links:
+          story: "Our Story"
+          work-with-us: "Work With Us"
+          location: "Location"

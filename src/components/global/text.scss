@@ -11,6 +11,10 @@
         @include no-select.no-select;
     }
 
+    &-no-wrap {
+        white-space: nowrap;
+    }
+    
     &-not-exceed {
         &-x {
             display: block;

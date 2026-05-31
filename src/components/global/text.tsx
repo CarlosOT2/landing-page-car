@@ -22,9 +22,13 @@ interface textProps {
       * If it overflows vertically, a scrollbar is displayed to allow scrolling
     */
     not_exceed_Y?: boolean
+    /**
+     * Prevents the text from wrapping onto multiple lines (no-wrap behavior)
+     */
+    no_wrap?: boolean
 }
 
-export default function Text({ tag, className, children, no_select, not_exceed_X, not_exceed_Y }: textProps) {
+export default function Text({ tag, className, children, no_select, no_wrap, not_exceed_X, not_exceed_Y }: textProps) {
     const TxtTag: keyof React.JSX.IntrinsicElements = tag
 
     const frmtd_className: string = FilterClasses(`
@@ -33,6 +37,7 @@ export default function Text({ tag, className, children, no_select, not_exceed_X
                 ${no_select ? 'text-no-select' : ''}
                 ${not_exceed_X ? 'text-not-exceed-x' : ''}
                 ${not_exceed_Y ? 'text-not-exceed-y' : ''}
+                ${no_wrap ? 'text-no-wrap' : ''}
                 `)
     return (
         <>

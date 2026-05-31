@@ -1,9 +1,21 @@
 //# Uses //
 @use './Shared/styles/mixins/CustomProps' as CustomProps;
 @use './shared/styles/themes' as themes;
+@use './shared/styles/default/layout' as layout;
+@use './shared/styles/default/query' as query;
 
 :root {
     @include CustomProps.CustomProps(themes.$default-theme);
+
+    //.. Layout //
+    --layout-default-width: #{layout.$layout-default-width};
+    --layout-default-height: #{layout.$layout-default-height};
+
+    --layout-max-width: #{layout.$layout-max-width};
+    --layout-max-height: #{layout.$layout-max-height};
+
+    //.. Query //
+    --screen-tablet-large: #{query.$screen-tablet-large};
 }
 
 body {
@@ -13,6 +25,57 @@ body {
 }
 
 main {
-    width: 100vw;
+    width: 100%;
     height: 100%;
+}
+
+//# Queries //
+
+/* Mobile */
+@media (min-width: #{query.$screen-mobile-small }) {
+    :root {
+        --layout-default-width: 95%;
+        --layout-default-height: calc(#{layout.$layout-default-height} - 200px);
+    }
+}
+
+
+/* Mobile Large */
+@media (min-width: #{query.$screen-mobile-large}) {
+    :root {
+        --layout-default-width: 95%;
+        --layout-default-height: calc(#{layout.$layout-default-height} - 100px);
+    }
+}
+
+/* Tablet */
+@media (min-width: #{query.$screen-tablet}) {
+    :root {
+        --layout-default-width: 95%;
+        --layout-default-height: calc(#{layout.$layout-default-height} - 100px);
+    }
+}
+
+/* Tablet Large */
+@media (min-width: #{query.$screen-tablet-large}) {
+    :root {
+        --layout-default-width: 95%;
+        --layout-default-height: calc(#{layout.$layout-default-height} - 50px);
+    }
+}
+
+/* Laptop */
+@media (min-width: #{query.$screen-laptop}) {
+    :root {
+        --layout-default-width: calc(#{layout.$layout-default-width} - 100px);
+        --layout-default-height: #{layout.$layout-default-height};
+    }
+}
+
+/* Laptop */
+@media (min-width: #{query.$screen-desktop}) {
+    :root {
+        --layout-default-width: #{layout.$layout-default-width};
+        --layout-default-height: #{layout.$layout-default-height};
+    }
 }

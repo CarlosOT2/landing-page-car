@@ -1,8 +1,8 @@
 //# Uses //
-@use '../../Shared/styles/default/layout' as layout;
 @use '../../Shared/styles/default/text' as text;
 @use '../../Shared/styles/default/border' as border;
 @use '../../Shared/styles/default/transition' as transition;
+@use '../../Shared/styles/default/query' as query;
 
 .home {
     display: flex;
@@ -10,7 +10,7 @@
     flex-direction: column;
 
     width: 100vw;
-    height: 100vh;
+    height: fit-content;
 
     &__content {
         position: relative;
@@ -19,29 +19,53 @@
         flex-direction: column;
         width: 100%;
         height: 100%;
-        max-width: layout.$layout-max-width;
+        max-width: var(--layout-max-width);
+    }
+
+    &__bg {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: var(--layout-default-height);
+        max-width: var(--layout-max-width);
+        object-fit: cover;
+        z-index: -1;
+
+        &--hero {
+            @extend .home__bg;
+            height: var(--layout-default-height);
+        }
+
+        &--vehicles {
+            @extend .home__bg;
+            height: calc(var(--layout-default-height) / 1.5);
+        }
+    }
+
+    &__left-shadow {
+        position: absolute;
+        left: 0;
+        width: 75%;
+        height: var(--layout-default-height);
+        max-width: var(--layout-max-width);
+        background: linear-gradient(to right, var(--color3), transparent);
+        z-index: -1;
+
+        &--hero {
+            @extend .home__left-shadow;
+        }
+
+        &--vehicles {
+            @extend .home__left-shadow;
+            height: calc(var(--layout-default-height) / 1.5);
+        }
     }
 
     &__hero {
-        &__left-shadow {
-            position: absolute;
-            left: 0;
-            width: 75%;
-            height: layout.$layout-default-height;
-            max-width: layout.$layout-max-width;
-            background: linear-gradient(to right, var(--color3), transparent);
-            z-index: -1;
-        }
+        display: flex;
+        flex-direction: column;
 
-        &__bg {
-            position: absolute;
-            left: 0;
-            width: 100%;
-            height: layout.$layout-default-height;
-            max-width: layout.$layout-max-width;
-            object-fit: cover;
-            z-index: -1;
-        }
+        width: var(--layout-default-width);
 
         &__title {
             margin: 0;
@@ -50,7 +74,8 @@
             font-weight: bold;
             font-size: text.$font-size1;
 
-            width: 30%;
+            max-width: 400px;
+            width: 75%;
         }
 
         &__button {
@@ -79,25 +104,23 @@
             }
         }
 
-        &__container {
+        &__content {
             display: flex;
             flex-direction: column;
             justify-content: center;
 
-            width: layout.$layout-default-width;
-            height: layout.$layout-default-height;
+            width: 100%;
+            height: var(--layout-default-height);
         }
     }
 
-    &__vehicles {
+    &__find-vehicles {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
 
-        width: layout.$layout-default-width;
-        height: layout.$layout-default-height;
-
+        width: var(--layout-default-width);
 
         &__title {
             margin-top: 60px;
@@ -105,6 +128,7 @@
 
             font-weight: bold;
             font-size: text.$font-size2;
+            text-align: center;
         }
 
         &__cards {
@@ -116,6 +140,9 @@
             &-icon {
                 width: 20%;
                 height: 100%;
+
+                min-width: 60px;
+                min-height: 45px;
             }
 
             &-button {
@@ -134,10 +161,14 @@
                 border-radius: border.$border-radius;
                 background: none;
 
-                transition: transform transition.$transition-time ease;
+                transition:
+                    border transition.$transition-time ease,
+                    color transition.$transition-time ease;
+
 
                 &:hover {
-                    transform: scale(1.05);
+                    border: 2px solid var(--color2);
+                    color: var(--color2);
                 }
             }
 
@@ -165,4 +196,240 @@
         }
     }
 
+    &__vehicles {
+        margin-top: 90px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &__list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            width: var(--layout-default-width);
+
+            gap: 25px;
+
+            &-wrapper {
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+
+                width: 100%;
+                height: calc(var(--layout-default-height) / 2);
+            }
+
+            &-title {
+                margin: 0;
+
+                font-size: text.$font-size2;
+                font-weight: bold;
+                color: var(--color1);
+            }
+
+            &-desc {
+                margin-top: 20px;
+
+                width: 35%;
+
+                font-size: text.$font-size5-5;
+                color: var(--color1);
+            }
+
+            &-button {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                height: 20%;
+                width: 35%;
+
+                margin-top: 50px;
+
+                font-size: text.$font-size5-5;
+                font-weight: bold;
+                color: var(--color1);
+
+                border: 2px solid var(--color1);
+                border-radius: border.$border-radius;
+                background: none;
+
+                transition: filter transition.$transition-time ease;
+
+                &:hover {
+                    filter: brightness(70%);
+                }
+
+            }
+
+            &-item {
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                height: calc(var(--layout-default-height) / 1.5);
+            }
+        }
+
+    }
+
+    //# Queries //
+
+    /* Laptop */
+    @media (max-width: #{query.$screen-laptop}) {
+        &__hero {
+            &__button {
+                width: 30%;
+            }
+        }
+    }
+
+    /* Tablet Large */
+    @media (max-width: #{query.$screen-tablet-large}) {
+        &__bg {
+            &--hero {
+                height: calc(var(--layout-default-height) * 1.25);
+            }
+        }
+
+        &__left-shadow {
+            &--hero {
+                width: 100%;
+                height: calc(var(--layout-default-height) * 1.25);
+                background: linear-gradient(to top, var(--color3), transparent);
+            }
+        }
+
+        &__hero {
+            height: calc(var(--layout-default-height) * 1.25);
+
+            &__content {
+                height: 100%;
+                justify-content: flex-end;
+                align-items: flex-start;
+                margin-bottom: 100px;
+                margin-left: 5%;
+            }
+
+            &__button {
+                margin-top: 35px;
+                width: 35%;
+            }
+        }
+
+        &__find-vehicles {
+            &__cards {
+                &-list {
+                    flex-direction: column;
+
+                    gap: 70px;
+
+                    &-item {
+                        width: var(--layout-default-width);
+                    }
+                }
+
+                &-icon {
+                    width: 9%;
+                }
+
+
+                &-text {
+                    font-size: text.$font-size5;
+                }
+
+                &-button {
+                    font-size: text.$font-size6;
+                    padding: 2%;
+                    width: 60%;
+                    height: 50px;
+                }
+            }
+        }
+
+        &__vehicles {
+            &__list {
+                &-wrapper {
+                    align-items: center;
+                }
+
+                &-title {
+                    text-align: start;
+                    width: 60%;
+                }
+
+                &-desc {
+                    width: 60%;
+                    text-align: start;
+                }
+
+                &-button {
+                    width: 60%;
+                    height: 50px;
+                    padding: 2%;
+                }
+            }
+        }
+    }
+
+    /* Tablet */
+    @media (max-width: #{query.$screen-tablet}) {
+        &__hero {
+            &__button {
+                width: 50%;
+            }
+        }
+    }
+
+    /* Mobile Large */
+    @media (max-width: calc(#{query.$screen-mobile-large} + 55px)) {
+
+        &__bg--vehicles,
+        &__vehicles__list-wrapper,
+        &__left-shadow--vehicles,
+        &__vehicles__list-item {
+            height: calc(var(--layout-default-height) / 1.15);
+        }
+
+        &__hero {
+            &__content {
+                justify-content: center;
+                align-items: center;
+                margin: 0;
+            }
+
+            &__title {
+                width: 90%;
+            }
+
+            &__button {
+                width: 90%;
+            }
+        }
+
+        &__vehicles {
+            &__list {
+                &-title {
+                    font-size: text.$font-size4;
+                }
+                &-desc {
+                    width: 200;
+                }
+            }
+        }
+    }
+
+    /* Mobile */
+    @media (max-width: #{query.$screen-mobile-medium}) {
+        &__hero {
+            &__title {
+                font-size: text.$font-size2;
+            }
+        }
+    }
 }

@@ -1,0 +1,28 @@
+{
+    "vehicles": [
+        {
+            "id": 1,
+            "src": "./img/vehicles-template-image/vehicle.jpg",
+            "title": "Example Vehicle Name",
+            "desc": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias quod rerum atque labore harum necessitatibus eos quia at, sequi nulla. Aspernatur qui explicabo debitis quam rerum accusamus corrupti hic. Ab!"
+        },
+        {
+            "id": 2,
+            "src": "./img/vehicles-template-image/vehicle-2.webp",
+            "title": "Example Vehicle Name",
+            "desc": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias quod rerum atque labore harum necessitatibus eos quia at, sequi nulla. Aspernatur qui explicabo debitis quam rerum accusamus corrupti hic. Ab!"
+        },
+        {
+            "id": 3,
+            "src": "./img/vehicles-template-image/vehicle-3.jpeg",
+            "title": "Example Vehicle Name",
+            "desc": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias quod rerum atque labore harum necessitatibus eos quia at, sequi nulla. Aspernatur qui explicabo debitis quam rerum accusamus corrupti hic. Ab!"
+        },
+        {
+            "id": 4,
+            "src": "./img/vehicles-template-image/vehicle-4.webp",
+            "title": "Example Vehicle Name",
+            "desc": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias quod rerum atque labore harum necessitatibus eos quia at, sequi nulla. Aspernatur qui explicabo debitis quam rerum accusamus corrupti hic. Ab!"
+        }
+    ]
+}

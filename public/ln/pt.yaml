@@ -1,3 +1,5 @@
+general:
+  companyname: "Nome Da Empresa"
 header: 
   search: "ENCONTRE VEÍCULOS"
   accessories: "ACESSÓRIOS"
@@ -8,7 +10,7 @@ home:
     discover:
       title: "Descubra Nossa Nova Linha de Veículos"
       button: "Saiba Mais"
-  vehicles:
+  find-vehicles:
     title: "Encontre o seu Veículo"
     cards: 
       newvehicles: 
@@ -17,7 +19,31 @@ home:
       preowned: 
         title: "Encontre Veículos Seminovos"
         button: "Encontre"
-      financing: 
-        title: "Simule seu financiamento"
-        button: "Simule"
+      visitus: 
+        title: "Visite-nos"
+        button: "Localizações"
+  vehicles:
+    cards:
+      button: "Saiba Mais"
+footer:
+  nav:
+    cols:
+      vehicles:
+        title: "Veículos"
+        links:
+          new: "Carros Novos"
+          semi-new: "Seminovos"
+      services:
+        title: "Serviços & Acessórios"
+        links:
+          maintenance: "Manutenção & Revisão"
+          bodywork: "Funilaria & Pintura"
+          oil-change: "Troca de Óleo"
+          accessories: "Acessórios Originais"
+      about:
+        title: "Sobre Nós"
+        links:
+          story: "Nossa História"
+          work-with-us: "Trabalhe Conosco"
+          location: "Localização"
 

@@ -1,6 +1,5 @@
 //# Use //
 @use '../../Shared/styles/default/header' as header;
-@use '../../Shared/styles/default/layout' as layout;
 @use '../../Shared/styles/default/query' as query;
 
 .header {
@@ -31,8 +30,25 @@
         justify-content: flex-start;
         align-items: center;
 
-        width: layout.$layout-default-width;
-        max-width: layout.$layout-max-width;
+        width: var(--layout-default-width);
+        max-width: var(--layout-max-width);
+
+        &--hamburguer {
+            @extend .header__nav;
+            justify-content: space-between;
+
+            &-icon {
+                width: 45px;
+                height: 45px;
+                margin-right: 2.5%;
+                color: var(--color1);
+            }
+
+            &-button {
+                background: none;
+                border: none;
+            }
+        }
     }
 
     &__link {
