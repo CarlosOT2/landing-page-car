@@ -1,5 +1,5 @@
 //# Uses //
-@use './Shared/styles/mixins/CustomProps' as CustomProps;
+@use './Shared/styles/mixins/CustomProps.scss' as CustomProps;
 @use './shared/styles/themes' as themes;
 @use './shared/styles/default/layout' as layout;
 @use './shared/styles/default/query' as query;

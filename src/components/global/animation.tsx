@@ -5,7 +5,7 @@ import FilterClasses from '../../shared/utils/FilterClasses'
 //# Types //
 import type React from 'react';
 //# Classes //
-import './Animation.scss';
+import './animation.scss';
 
 type Props = {
     children?: React.ReactNode;
