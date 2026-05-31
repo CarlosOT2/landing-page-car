@@ -54,22 +54,22 @@ export default function Footer() {
                         <ul className='footer__bottom__list'>
                             <li className='footer__bottom__list-item'>
                                 <Link to='#' className='footer__bottom__list-link'>
-                                    <Img src='/public/img/socials/facebook.png' className='footer__bottom__list-img' noSelect={true}></Img>
+                                    <Img src='/img/socials/facebook.png' className='footer__bottom__list-img' noSelect={true}></Img>
                                 </Link>
                             </li>
                             <li className='footer__bottom__list-item'>
                                 <Link to='#' className='footer__bottom__list-link'>
-                                    <Img src='/public/img/socials/instagram.png' className='footer__bottom__list-img' noSelect={true}></Img>
+                                    <Img src='/img/socials/instagram.png' className='footer__bottom__list-img' noSelect={true}></Img>
                                 </Link>
                             </li>
                             <li className='footer__bottom__list-item'>
                                 <Link to='#' className='footer__bottom__list-link'>
-                                    <Img src='/public/img/socials/whatsapp.png' className='footer__bottom__list-img' noSelect={true}></Img>
+                                    <Img src='/img/socials/whatsapp.png' className='footer__bottom__list-img' noSelect={true}></Img>
                                 </Link>
                             </li>
                             <li className='footer__bottom__list-item'>
                                 <Link to='#' className='footer__bottom__list-link'>
-                                    <Img src='/public/img/socials/youtube.png' className='footer__bottom__list-img' noSelect={true}></Img>
+                                    <Img src='/img/socials/youtube.png' className='footer__bottom__list-img' noSelect={true}></Img>
                                 </Link>
                             </li>
                         </ul>
