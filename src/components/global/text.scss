@@ -1,6 +1,6 @@
 //# Use //
-@use '../../Shared/styles/default/text.scss' as text;
-@use '../../Shared/styles/mixins/no-select' as no-select;
+@use '../../shared/styles/default/text.scss' as text;
+@use '../../shared/styles/mixins/no-select' as no-select;
 
 .text {
     display: flex;
