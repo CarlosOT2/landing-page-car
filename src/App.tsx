@@ -7,8 +7,6 @@ import { useLocation, Routes, Route, Navigate } from "react-router-dom";
 import { useTranslation } from 'react-i18next';
 //# Classes //
 import './App.scss'
-//# i18n
-import i18n from './config/i18n/i18n';
 
 //* Local Functions //
 function GetParams(location: ReturnType<typeof useLocation>) {
