@@ -1,6 +1,7 @@
 //# Use //
 @use '../../shared/styles/default/header' as header;
 @use '../../shared/styles/default/query' as query;
+@use '../../shared/styles/default/transition' as transition;
 
 .header {
     position: absolute;
@@ -12,6 +13,7 @@
     width: 100%;
     height: header.$height-size;
 
+    z-index: 1;
 
     &__logo {
         width: 75px;
@@ -23,6 +25,8 @@
         height: 1px;
         background: linear-gradient(to right, transparent, var(--color1), transparent);
         width: 100%;
+
+        margin-top: 0;
     }
 
     &__nav {
@@ -32,28 +36,39 @@
 
         width: var(--layout-default-width);
         max-width: var(--layout-max-width);
+        height: calc(header.$height-size * 0.78);
 
-        &--hamburguer {
+        &--hamburger-closed {
             @extend .header__nav;
             justify-content: space-between;
+        }
 
-            &-icon {
-                width: 45px;
-                height: 45px;
-                margin-right: 2.5%;
-                color: var(--color1);
-            }
+        &--hamburger-opened {
+            position: fixed;
 
-            &-button {
-                background: none;
-                border: none;
-            }
+            width: 100%;
+            height: 100%;
+            background-color: var(--color1);
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
     }
 
     &__link {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        height: 100%;
+        border-bottom: 1px solid transparent;
+
         color: var(--color1);
-        
+        transition: border-color transition.$transition-time ease;
+
+        z-index: 2;
+
         &--logo {}
 
         &-list {
@@ -70,7 +85,57 @@
 
             gap: 50px;
 
-            &__item {}
+            &__item {
+                height: 100%;
+            }
+        }
+
+        &:hover {
+            border-color: var(--color2);
+        }
+    }
+
+    &__hamburger {
+        &-closed {
+            &__icon {
+                width: 45px;
+                height: 45px;
+                margin-right: 2.5%;
+                color: var(--color1);
+            }
+
+            &__button {
+                background: none;
+                border: none;
+            }
+        }
+
+        &-opened {
+            &__top {
+                display: flex;
+                align-items: center;
+
+                height: calc(header.$height-size * 0.78);
+            }
+
+            &__content {
+
+            }
+
+            &__logo {
+
+                width: 43px;
+                height: 43px;
+            }
+
+            &__hr {
+                border: none;
+                height: 1px;
+                background: linear-gradient(to right, var(--color4), var(--color5), var(--color4));
+                width: 100%;
+                margin-top: 0;
+            }
+
         }
     }
 

@@ -16,7 +16,7 @@ export default function Footer() {
         <>
             <footer className='footer'>
                 <section className='footer__banner'>
-                    <Img src='./img/logo/logofooter.png' className='footer__banner-img' noSelect={true} />
+                    <Img src='./img/logo/logooutline.png' className='footer__banner-img' noSelect={true} />
                     <Text tag='span' className='footer__banner-text'>
                         {t(`general.companyname`)}
                     </Text>
