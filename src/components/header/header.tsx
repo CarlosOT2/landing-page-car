@@ -59,6 +59,39 @@ function HamburgerMenuClosed({ setOpen }: { setOpen: any }) {
 
 function HamburgerMenuOpened({ setOpen }: { setOpen: any }) {
     const { t } = useTranslation()
+
+    function ListItem({ key, navKey, route }: { key: number, navKey: string, route: string }) {
+        const [hover, setHover] = useState(false)
+
+        return (
+            <>
+                <li
+                    key={key}
+                    className='header__hamburger-opened__link-list__item'
+                    onMouseEnter={() => setHover(true)}
+                    onMouseLeave={() => setHover(false)}
+                >
+                    <Link
+                        to={route}
+                        className={`
+                            header__hamburger-opened__link
+                            ${hover ? 'header__hamburger-opened__link--hover-text' : ''}
+                            `}
+                        no_wrap={true}
+                    >
+                        {t(`header.${navKey}`)}
+                    </Link>
+                    <hr
+                        className={`
+                            header__hamburger-opened__link-list__hr
+                            ${hover ? 'header__hamburger-opened__link--hover-hr' : ''}
+                            `}
+                    />
+                </li>
+            </>
+        )
+
+    }
     return (
         <nav className='header__nav--hamburger-opened'>
             <section className='header__hamburger-opened__top'>
@@ -68,18 +101,14 @@ function HamburgerMenuOpened({ setOpen }: { setOpen: any }) {
                     onClick={() => setOpen(false)}
                     className='header__hamburger-opened__button'
                 >
-                    <IoMdClose />
+                    <IoMdClose className='header__hamburger-opened__button-icon' />
                 </Button>
             </section>
             <hr className='header__hamburger-opened__hr' />
             <section className='header__hamburger-opened__content'>
                 <ul className='header__hamburger-opened__link-list'>
-                    {Object.entries(headerRoutes).map(([key, route]) => (
-                        <li key={key} className='header__hamburger-opened__link-list__item'>
-                            <Link to={route} className='header__hamburger-opened__link' no_wrap={true}>
-                                {t(`header.${key}`)}
-                            </Link>
-                        </li>
+                    {Object.entries(headerRoutes).map(([key, route], index) => (
+                        <ListItem key={index} navKey={key} route={route} />
                     ))}
                 </ul>
             </section>
